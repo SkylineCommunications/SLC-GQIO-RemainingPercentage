@@ -1,1 +1,1 @@
-"# SLC-GQIO-RemainingPercentage" 
+# SLC-GQIO-RemainingPercentage

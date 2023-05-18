@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{C14EF789-E904-499B-BD1E-8E1B90200753}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{92726AB1-C6DB-4C83-ADAE-D0ADD9C9E313}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{F2AA873D-771F-4B7B-B80B-888A24233E96}"
+	ProjectSection(SolutionItems) = preProject
+		Dlls\AboutThisFolder.md = Dlls\AboutThisFolder.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompanionFiles", "CompanionFiles", "{C66FE36D-7AA8-476F-8A25-6B087FB0131F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skyline DataMiner", "Skyline DataMiner", "{B19EC5CE-BE0B-4795-AFBF-CB9DB96B9111}"
+	ProjectSection(SolutionItems) = preProject
+		CompanionFiles\Skyline DataMiner\AboutThisFolder.md = CompanionFiles\Skyline DataMiner\AboutThisFolder.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{9F8BAA46-C149-433A-AAE4-1760D0886D49}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\AboutThisFolder.md = Documentation\AboutThisFolder.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{6B5A2EC9-1A87-43A6-9ED7-07CC224344CE}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLC-GQIO-RemainingPercentage", "SLC-GQIO-RemainingPercentage", "{22F82EBE-CC7B-4521-B1CC-2A8456AA3EEA}"
+	ProjectSection(SolutionItems) = preProject
+		SLC-GQIO-RemainingPercentage.xml = SLC-GQIO-RemainingPercentage.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{A979AED0-78BF-48E4-B136-8C700C6FB283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC-GQIO-RemainingPercentage_1", "SLC-GQIO-RemainingPercentage_1\SLC-GQIO-RemainingPercentage_1.csproj", "{45AD4EFF-6F88-4850-A783-91920785C84A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45AD4EFF-6F88-4850-A783-91920785C84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AD4EFF-6F88-4850-A783-91920785C84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AD4EFF-6F88-4850-A783-91920785C84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AD4EFF-6F88-4850-A783-91920785C84A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B19EC5CE-BE0B-4795-AFBF-CB9DB96B9111} = {C66FE36D-7AA8-476F-8A25-6B087FB0131F}
+		{6B5A2EC9-1A87-43A6-9ED7-07CC224344CE} = {C14EF789-E904-499B-BD1E-8E1B90200753}
+		{22F82EBE-CC7B-4521-B1CC-2A8456AA3EEA} = {92726AB1-C6DB-4C83-ADAE-D0ADD9C9E313}
+		{A979AED0-78BF-48E4-B136-8C700C6FB283} = {22F82EBE-CC7B-4521-B1CC-2A8456AA3EEA}
+		{45AD4EFF-6F88-4850-A783-91920785C84A} = {A979AED0-78BF-48E4-B136-8C700C6FB283}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {842E4D0E-8390-4BD5-935C-2225228C09CA}
+	EndGlobalSection
+EndGlobal
