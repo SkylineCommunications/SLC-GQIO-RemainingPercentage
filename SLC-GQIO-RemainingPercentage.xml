@@ -21,6 +21,8 @@
 			<Value><![CDATA[[Project:SLC-GQIO-RemainingPercentage_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Message></Message>
+			<Param type="preCompile">true</Param>
+			<Param type="libraryName">Remaining Percentage Calculator</Param>
 		</Exe>
 	</Script>
 </DMSScript>

@@ -35,9 +35,13 @@
       "frameworks": {
         "net462": {
           "dependencies": {
+            "SLC.Lib.Automation": {
+              "target": "Package",
+              "version": "[1.4.0.2, )"
+            },
             "Skyline.DataMiner.Dev.Automation": {
               "target": "Package",
-              "version": "[10.1.0.6, )"
+              "version": "[10.3.5, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

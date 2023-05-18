@@ -49,26 +49,58 @@ dd/mm/2023	1.0.0.1		XXX, Skyline	Initial version
 ****************************************************************************
 */
 
-namespace SLC-GQIO-RemainingPercentage_1
+using Skyline.DataMiner.Analytics.GenericInterface;
+using System;
+
+[GQIMetaData(Name = "Remaining Percentage")]
+public class MyCustomOperator : IGQIColumnOperator, IGQIRowOperator, IGQIInputArguments
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Globalization;
-	using System.Text;
-	using Skyline.DataMiner.Automation;
-	
-	/// <summary>
-	/// Represents a DataMiner Automation script.
-	/// </summary>
-	public class Script
+	private GQIColumnDropdownArgument _firstColumnArg = new GQIColumnDropdownArgument("Percentage") { IsRequired = true, Types = new GQIColumnType[] { GQIColumnType.Double } };
+	private GQIStringArgument _nameArg = new GQIStringArgument("Column name") { IsRequired = true };
+
+	private GQIColumn _firstColumn;
+	private GQIDoubleColumn _newColumn;
+
+	public GQIArgument[] GetInputArguments()
 	{
-		/// <summary>
-		/// The script entry point.
-		/// </summary>
-		/// <param name="engine">Link with SLAutomation process.</param>
-		public void Run(IEngine engine)
+		return new GQIArgument[] { _firstColumnArg, _nameArg };
+	}
+
+	public OnArgumentsProcessedOutputArgs OnArgumentsProcessed(OnArgumentsProcessedInputArgs args)
+	{
+		_firstColumn = args.GetArgumentValue(_firstColumnArg);
+		_newColumn = new GQIDoubleColumn(args.GetArgumentValue(_nameArg));
+
+		return new OnArgumentsProcessedOutputArgs();
+	}
+
+	public void HandleColumns(GQIEditableHeader header)
+	{
+		header.AddColumns(_newColumn);
+	}
+
+	public void HandleRow(GQIEditableRow row)
+	{
+		double dFirstValue;
+
+		if (!row.TryGetValue(_firstColumn, out dFirstValue))
 		{
-	
+			row.Delete();
+			return;
+		}
+
+		if (dFirstValue < 0 || dFirstValue > 100)
+		{
+			// Negative %s not supported - what to do on this case?
+
+			row.Delete();
+			return;
+		}
+		else
+		{
+			var result = 100 - dFirstValue;
+			var resultRounded = Math.Round(result, 2);
+			row.SetValue(_newColumn, result, $"{ resultRounded}%");
 		}
 	}
 }
